@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 
   get "fortune", controller: "my_examples", action: "fortune_teller"
   get "lottery", controller: "my_examples", action: "lottery_number"
+  get "99Bottles", controller: "my_examples", action: "song_lyrics"
 end

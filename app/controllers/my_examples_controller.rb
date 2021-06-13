@@ -11,7 +11,7 @@ class MyExamplesController < ApplicationController
     end
     render json: {item1: fortune}
   end
-  
+
   def lottery_number
     lottery_winner = []
     6.times do
@@ -20,4 +20,22 @@ class MyExamplesController < ApplicationController
     end
     render json: {winning_numbers: lottery_winner}
   end
+
+  def song_lyrics
+    lyrics = (
+      x = 99
+      98.times do
+        p "#{x} bottles of beer on the wall, #{x} bottles of beer.
+        Take one down and pass it around, #{x-1} bottles of beer on the wall."
+        x = x - 1
+      end
+
+      p "1 bottle of beer on the wall, 1 bottle of beer.
+      Take one down and pass it around, no more bottles of beer on the wall.
+      No more bottles of beer on the wall, no more bottles of beer.
+      Go to the store and buy some more, 99 bottles of beer on the wall."
+    )
+    render json: {lyrics: lyrics}
+  end
+
 end
