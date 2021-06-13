@@ -22,20 +22,14 @@ class MyExamplesController < ApplicationController
   end
 
   def song_lyrics
-    lyrics = (
-      x = 99
-      98.times do
-        p "#{x} bottles of beer on the wall, #{x} bottles of beer.
-        Take one down and pass it around, #{x-1} bottles of beer on the wall."
-        x = x - 1
-      end
-
-      p "1 bottle of beer on the wall, 1 bottle of beer.
-      Take one down and pass it around, no more bottles of beer on the wall.
-      No more bottles of beer on the wall, no more bottles of beer.
-      Go to the store and buy some more, 99 bottles of beer on the wall."
-    )
-    render json: {lyrics: lyrics}
+    all_lyrics = ""
+    number = 99
+    99.times do
+      lyric = "#{number} bottles of beer on the wall"
+      number -= 1
+      all_lyrics += lyric
+    end
+    render json: {lyrics: all_lyrics}
   end
 
 end
