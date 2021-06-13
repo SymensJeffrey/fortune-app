@@ -11,4 +11,13 @@ class MyExamplesController < ApplicationController
     end
     render json: {item1: fortune}
   end
+  
+  def lottery_number
+    lottery_winner = []
+    6.times do
+      number = rand(1..60)
+      lottery_winner << number
+    end
+    render json: {winning_numbers: lottery_winner}
+  end
 end
