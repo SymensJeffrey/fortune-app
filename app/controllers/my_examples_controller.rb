@@ -1,2 +1,14 @@
 class MyExamplesController < ApplicationController
+  def fortune_teller
+    number = rand(1..3)
+
+    if number == 1
+      fortune = "You will be very rich"
+    elsif number == 2
+      fortune = "You will be very happy"
+    elsif number == 3
+      fortune = "You will find love"
+    end
+    render json: {item1: fortune}
+  end
 end
